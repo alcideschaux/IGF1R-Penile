@@ -14,20 +14,20 @@
 <title>IGF1R Expression in Penile Cancer</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet"
-      href="site_libs/highlight/textmate.css"
-      type="text/css" />
-<script src="site_libs/highlight/highlight.js"></script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -97,6 +97,7 @@ button.code-folding-btn:focus {
 }
 </style>
 
+
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
@@ -153,7 +154,6 @@ $(document).ready(function () {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -161,7 +161,9 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
-<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 <script>
 $(document).ready(function () {
   window.initializeCodeFolding("hide" === "show");
@@ -185,7 +187,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0
@@ -244,8 +246,9 @@ div.tocify {
 }
 
 .tocify-subheader .tocify-item {
-  font-size: 0.9em;
-  padding-left: 5px;
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -282,9 +285,7 @@ div.tocify {
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="../index.html">Sandbox Home</a>
-</li>
+        
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -308,12 +309,13 @@ div.tocify {
 
 
 <hr />
-<p><strong>Title:</strong> Strong Association of Insulin-Like Growth Factor 1 Receptor Expression and Histologic Grade in Penile Squamous Cell Carcinomas: A Tissue Microarray Study of 112 Cases</p>
+<p><strong>Title:</strong> Strong Association of Insulin-Like Growth Factor 1 Receptor Expression and Histologic Subtype and Grade in Penile Squamous Cell Carcinomas: A Tissue Microarray Study of 112 Cases</p>
 <p><strong>Authors’ list:</strong> Sheila F. Faraj, M.D. (1); Nilda Gonzalez-Roibon, M.D. (1,4); Enrico Munari, M.D. (1); George J. Netto, M.D. (1,2,3); Alcides Chaux, M.D. (1,5)</p>
-<p><strong>Authors’ Affiliations:</strong> (1) Department of Pathology, Johns Hopkins Medical Institutions, Baltimore, MD; (2) Department of Urology, Johns Hopkins Medical Institutions, Baltimore, MD; (3) Department of Oncology, Johns Hopkins Medical Institutions, Baltimore, MD; (4) Departamento de Anatomía y Fisiología Patológica, Facultad de Medicina, Universidad Nacional del Nordeste, Corrientes, Argentina; (5) Department of Scientific Research, Norte University, Asunción, Paraguay</p>
+<p><strong>Authors’ Affiliations:</strong> (1) Department of Pathology, Johns Hopkins Medical Institutions, Baltimore, MD; (2) Department of Urology, Johns Hopkins Medical Institutions, Baltimore, MD; (3) Department of Oncology, Johns Hopkins Medical Institutions, Baltimore, MD; (4) Departamento de Anatomía y Fisiología Patológica, Facultad de Medicina, Universidad Nacional del Nordeste, Corrientes, Argentina; (5) Centro para el Desarrollo de la Investigación Científica (CEDIC), Paraguay.</p>
+<p><strong>Last update:</strong> 2017-02-24</p>
 <hr />
-<div id="introduction" class="section level2">
-<h2>Introduction</h2>
+<div id="introduction" class="section level1">
+<h1><strong>Introduction</strong></h1>
 <p>The insulin-like growth factor-1 receptor (IGFR1) is a tyrosine kinase receptor that plays a key role in cell growth and transformation. IGFR1 is overexpressed in several tumors, but its expression status has been described in penile carcinomas in only a few previous studies. IGFR1 inhibitors have been developed and are currently being tested in clinical trials. This study evaluates IGFR1 immunohistochemical expression in a set of invasive penile squamous cell carcinomas (SCC) and its association with pathologic features.</p>
 <pre class="r"><code># Setting up global environment
 library(knitr)
@@ -322,17 +324,18 @@ opts_chunk$set(
   message = FALSE,
   fig.align = &quot;center&quot;)</code></pre>
 <hr />
+<p> </p>
 </div>
-<div id="material-method" class="section level2">
-<h2>Material &amp; Method</h2>
-<div id="case-selection-and-tissue-microarray-construction" class="section level3">
-<h3>Case selection and tissue microarray construction</h3>
+<div id="material-method" class="section level1">
+<h1><strong>Material &amp; Method</strong></h1>
+<div id="case-selection-and-tissue-microarray-construction" class="section level2">
+<h2>Case selection and tissue microarray construction</h2>
 <p>The present study includes tissue samples from 112 patients with invasive SCC of the penis from the consultation files of one of the authors (AC). Cases were selected based on availability of formalin-fixed, paraffin-embedded tissue blocks. From each case, 1–4 blocks were selected. Four tissue microarrays (TMAs) were built at the Johns Hopkins TMA Lab Core (Baltimore, MD) using a previously described procedure <span class="citation">[1]</span>. Three tissue cores of 1 mm each were obtained per block, giving a representation of 3–12 TMA spots per case.</p>
 <pre class="r"><code># Opening the dataset
 library(foreign)
-DF &lt;- read.dta(&quot;../Data/igf1r_penile_dataset.dta&quot;)
+DF &lt;- read.dta(&quot;../data/igf1r_penile_dataset.dta&quot;)
 # Selecting the variables that will be used for analysis
-DF &lt;- DF[, c(3,4,6:8)]
+DF &lt;- DF[, c(1,3,4,6:8)]
 # Recoding variables for proper statistical handling
 library(dplyr)
 DF &lt;- DF %&gt;%
@@ -346,17 +349,46 @@ DF &lt;- DF %&gt;%
   mutate(memb = factor(
     memb, labels = c(&quot;0&quot;, &quot;1+&quot;, &quot;2+&quot;, &quot;3+&quot;)
     )
-  )
+  ) %&gt;% 
+  rename(hpv_pcr = hpv)
 # Fixing labels for proper display in plots
 library(stringr)
 DF$subtype2 &lt;- DF$subtype2 %&gt;%
   str_replace_all(&quot; SCC&quot;, &quot;&quot;) %&gt;%
   factor()
 # Sorting histologic subtypes by decreasing frequency
-DF$subtype2 &lt;- reorder(DF$subtype2, -table(DF$subtype2)[DF$subtype2])</code></pre>
+DF$subtype2 &lt;- reorder(DF$subtype2, -table(DF$subtype2)[DF$subtype2])
+
+# HPV by ISH dataset
+library(forcats)
+DF_HPV &lt;- read.csv(&quot;../data/tma852-855_dataset.csv&quot;) %&gt;% 
+  filter(caseid != &quot;control&quot;) %&gt;% 
+  select(caseid, hpv_ish) %&gt;% 
+  group_by(caseid) %&gt;% 
+  summarize(
+    hpv_ish = max(as.numeric(as.character(hpv_ish)), na.rm = TRUE)
+  ) %&gt;% 
+  mutate(
+    hpv_ish = fct_recode(
+      factor(hpv_ish),
+      &quot;HPV positive&quot; = &quot;1&quot;,
+      &quot;HPV negative&quot; = &quot;0&quot;,
+      NULL = &quot;-Inf&quot;
+    )
+  )
+
+# Merging datasets
+DF &lt;- merge(DF, DF_HPV, by = &quot;caseid&quot;)
+
+# Defining HPV status
+DF$hpv_status[DF$hpv_pcr == &quot;HPV positive&quot; | DF$hpv_ish == &quot;HPV positive&quot;] &lt;- &quot;HPV positive&quot;
+DF$hpv_status[DF$hpv_pcr == &quot;HPV negative&quot; &amp; DF$hpv_ish == &quot;HPV negative&quot;] &lt;- &quot;HPV negative&quot;
+DF$hpv_status[DF$hpv_ish == &quot;HPV negative&quot;] &lt;- &quot;HPV negative&quot;
+DF$hpv_status &lt;- factor(DF$hpv_status, levels = c(&quot;HPV negative&quot;, &quot;HPV positive&quot;), ordered = TRUE)</code></pre>
+<p> </p>
 </div>
-<div id="morphologic-evaluation" class="section level3">
-<h3>Morphologic evaluation</h3>
+<div id="morphologic-evaluation" class="section level2">
+<h2>Morphologic evaluation</h2>
 <p>Pathologic features were evaluated using H&amp;E-stained sections. Histologic subtyping was carried out in whole tissue sections using previously published morphologic criteria <span class="citation">[2]</span>. Histologic grading was carried out spot by spot using previously published and validated criteria <span class="citation">[3]</span>. For statistical analysis, the highest grade at the TMA spots was assigned as the histologic grade of the case. Figure 1 shows the morphologic criteria used for histologic grading.</p>
 <p style="text-align: center;">
 <img src="fig1.png" />
@@ -364,13 +396,20 @@ DF$subtype2 &lt;- reorder(DF$subtype2, -table(DF$subtype2)[DF$subtype2])</code><
 <p style="text-align: justify; font-size: small;">
 <strong>Figure 1: Histologic grade in penile squamous cell carcinoma (SCC)</strong> A) Grade 1 SCC composed of tumor cells almost indistinguishable from normal squamous cells and minimal cytologic and architectural atypia. B) Grade 2 SCC composed of tumor cells with more cytologic atypias althought squamous maturation is retained. C) and D) Grade 3 SCC with tumor cells with evident nuclear atypias and architectural disorganization.
 </p>
+<p> </p>
 </div>
-<div id="hpv-detection" class="section level3">
-<h3>HPV detection</h3>
-<p>In 52 cases, HPV detection was done by SPF10 polymerase chain reaction and DEIA, a DNA enzyme-immunoassay for general HPV detection, as previously described <span class="citation">[4]</span>. Tissue samples (5% of the total) in which no HPV presence was expected were used as controls.</p>
+<div id="hpv-detection" class="section level2">
+<h2>HPV detection</h2>
+<p>HPV status was established by either polymerase chain reaction (PCR) or <em>in situ</em> hybridization (ISH).</p>
+<ul>
+<li><strong>Detection by PCR:</strong> it was done by SPF10 polymerase chain reaction and DEIA, a DNA enzyme-immunoassay for general HPV detection, as previously described <span class="citation">[4]</span>. Tissue samples (5% of the total) in which no HPV presence was expected were used as controls.</li>
+<li><strong>Detection by ISH:</strong> it was performed on automated benchmark XT system (Ventana Medical Systems, Inc., Tucson, AZ). INFORM® HPV III family 16 probe (B) cocktail, with affinity for high risk (HR) genotypes (16, 18, 31, 33,35,39,45,51,52,56, 58, and 66), was applied and the reaction was developed using hybrid ready detection kit (ref # 780-4295 and ref #254-2210-2116 respectively, Ventana Medical Systems, Inc., Tucson, AZ).</li>
+</ul>
+<p>A case was classified as “HPV positive” if any of the detection methods was positive. Conversely, a case was classified as “HPV negative” if both methods were negative.</p>
+<p> </p>
 </div>
-<div id="igf1r-expression-and-scoring-system" class="section level3">
-<h3>IGF1R expression and scoring system</h3>
+<div id="igf1r-expression-and-scoring-system" class="section level2">
+<h2>IGF1R expression and scoring system</h2>
 <p>IGF1R expression was evaluated by immunohistochemistry on 5 <span class="math inline">\(\mu\)</span>m TMA sections using a monoclonal rabbit (clone G11) anti-IGF1R antibody (Catalog #790-4346, Ventana Medical Systems, Inc., Tucson, AZ). Only membranous staining was considered as indicative of IGF1R expression. Evaluation of IGF1R expression was carried out by 2 authors (SFF and GJN) blindly from pathologic features and HPV status.</p>
 <p>IGF1R expression was evaluated using 2 different approaches. The first approach consisted of a quantitative H-score system in which IGF1R expression was estimated as the sum of the products of the intensity (0 for negative, 1 for weakly positive, 2 for moderately positive, and 3 for strongly positive) multiplied by the extent of the stain (0% to 100%), obtaining a value ranging from 0 to 300. Estimations of the H-score were made spot by spot. Figure 2 shows examples of staining intensity used for scoring the spots. For each case, the pooled median of the TMA H-scores was used for statistical analyses.</p>
 <p style="text-align: center;">
@@ -380,243 +419,223 @@ DF$subtype2 &lt;- reorder(DF$subtype2, -table(DF$subtype2)[DF$subtype2])</code><
 <strong>Figure 2: Immunohistochemical Expression of ARID1A in Penile Carcinomas.</strong> Only nuclear positivity was considered as indicative of ARID1A expression. A–B) Negative ARID1A expression. C–D) Moderate ARID1A expression. E–F) Strong ARID1A expression.
 </p>
 <p>The second approach for evaluating IGF1R expression consisted of a semi-quantitative score system similar to the standardized scoring system used for evaluating HER2 immunohistochemical expression. TMA spots were classified in any of the following categories: 0, no reactivity or membranous reactivity in &lt; 10% of tumor cells; 1+, faint or barely perceptible membranous partial reactivity in 10% or more of tumors cells; 2+, weak to moderate complete membranous reactivity in 10% or more of tumor cells; 3+, strong complete membranous reactivity in 10% or more of tumor cells. For each case, the highest category obtained at any TMA spot was used for statistical analyses.</p>
+<p> </p>
 </div>
-<div id="statistical-analysis" class="section level3">
-<h3>Statistical Analysis</h3>
-<p>IGF1R expression was compared by histologic subtype, histologic grade, and HPV status using either the Kruskal-Wallis equality-of-populations rank test (quantitative score) or the Fisher’s exact test (semi-quantitative score). A 2-tailed P &lt; 0.05 was required for statistical significance. Data were analyzed and plots were generated using R version 3.3.1 (2016-06-21) <span class="citation">[5]</span>.</p>
+<div id="statistical-analysis" class="section level2">
+<h2>Statistical Analysis</h2>
+<p>IGF1R expression was compared by histologic subtype, histologic grade, and HPV status using either the Kruskal-Wallis equality-of-populations rank test (quantitative score) or the Fisher’s exact test (semi-quantitative score). A 2-tailed P &lt; 0.05 was required for statistical significance. Data were analyzed and plots were generated using R version 3.3.2 (2016-10-31) <span class="citation">[5]</span>.</p>
 <hr />
+<p> </p>
 </div>
 </div>
-<div id="results" class="section level2">
-<h2>Results</h2>
-<p>This section is divided in 2 parts: descriptive statistics and association analysis.</p>
+<div id="results-descriptive-statistics" class="section level1">
+<h1><strong>Results: Descriptive statistics</strong></h1>
 <pre class="r"><code># Loading ggplot2 scripts for plots
 source(&quot;../R/gplots.R&quot;)
 # Loading functions for nice tables
-source(&quot;../R/nice_tables.R&quot;)</code></pre>
-<div id="descriptive-statistics" class="section level3">
-<h3>Descriptive Statistics</h3>
-<p>In this subsection we describe the pathologic features of our cases. We also summatize IGF1R expression by H-scores and by levels.</p>
-<div id="pathologic-features" class="section level4">
-<h4>Pathologic Features</h4>
-<p>We describe the pathologic features of our cases using bar plots, including histologic subtypes, histologic grades, and HPV status.</p>
-<pre class="r"><code># Histologic subtype
-x &lt;- DF$subtype2
-labx &lt;- &quot;Histologic Subtype&quot;
-gbar(x) +
-  xlab(labx) +
-  ggtitle(paste(&quot;Distribution by&quot;, labx))</code></pre>
-<p><img src="index_files/figure-html/Descriptive_Pathology-1.png" width="864" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>nice_table_factor(x)</code></pre>
+source(&quot;../R/nice_tables.R&quot;)
+# Updated scripts
+scripts &lt;- list.files(path = &quot;~/Dropbox/R-scripts/&quot;, pattern = &quot;*.R$&quot;, full.names = TRUE)
+for (script in scripts) { source(script) }</code></pre>
+<p>In this subsection we describe the pathologic features of our cases. We also summatize IGF1R expression by H-scores and by levels. First, we describe the pathologic features of our cases using bar plots, including histologic subtypes, histologic grades, and HPV status. Second, we summarize IGF1R expression by H-scores using histograms and by levels using bar plots. As mentioned before, H-scores correspond to median values from all TMA spots belonging to each particular case. Also, IGF1R levels correspond to the highest level observed at any spot for each particular case.</p>
+<p> </p>
+<div id="histologic-subtype" class="section level2">
+<h2>Histologic subtype</h2>
+<pre class="r"><code>x &lt;- DF$subtype2
+tbl_nice(x)</code></pre>
 <table>
+<caption>Summary table</caption>
 <thead>
 <tr class="header">
 <th></th>
-<th align="center">No. Cases</th>
-<th align="center">%</th>
+<th align="center">No. Cases (%)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Usual</td>
-<td align="center">48</td>
-<td align="center">42.9</td>
+<td align="center">48 (43)</td>
 </tr>
 <tr class="even">
 <td>Warty-Basaloid</td>
-<td align="center">24</td>
-<td align="center">21.4</td>
+<td align="center">24 (21)</td>
 </tr>
 <tr class="odd">
 <td>Warty</td>
-<td align="center">17</td>
-<td align="center">15.2</td>
+<td align="center">17 (15)</td>
 </tr>
 <tr class="even">
 <td>Basaloid</td>
-<td align="center">11</td>
-<td align="center">9.8</td>
+<td align="center">11 (10)</td>
 </tr>
 <tr class="odd">
 <td>Papillary</td>
-<td align="center">9</td>
-<td align="center">8.0</td>
+<td align="center">9 (8)</td>
 </tr>
 <tr class="even">
 <td>Other Subtypes</td>
-<td align="center">3</td>
-<td align="center">2.7</td>
+<td align="center">3 (3)</td>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code># Histologic grade
-x &lt;- DF$grade
-labx &lt;- &quot;Histologic Grade&quot;
-gbar(x, sort = FALSE) +
-  xlab(labx) +
-  ggtitle(paste(&quot;Distribution by&quot;, labx))</code></pre>
-<p><img src="index_files/figure-html/Descriptive_Pathology-2.png" width="864" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>nice_table_factor(x)</code></pre>
+<pre class="r"><code>g_barplot(x)</code></pre>
+<p><img src="index_files/figure-html/subtype2-1.png" width="864" style="display: block; margin: auto;" /></p>
+<hr />
+<p> </p>
+</div>
+<div id="histologic-grade" class="section level2">
+<h2>Histologic grade</h2>
+<pre class="r"><code>x &lt;- DF$grade
+tbl_nice(x)</code></pre>
 <table>
+<caption>Summary table</caption>
 <thead>
 <tr class="header">
 <th></th>
-<th align="center">No. Cases</th>
-<th align="center">%</th>
+<th align="center">No. Cases (%)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Grade 1</td>
-<td align="center">5</td>
-<td align="center">4.5</td>
+<td align="center">5 (4)</td>
 </tr>
 <tr class="even">
 <td>Grade 2</td>
-<td align="center">41</td>
-<td align="center">36.6</td>
+<td align="center">41 (37)</td>
 </tr>
 <tr class="odd">
 <td>Grade 3</td>
-<td align="center">66</td>
-<td align="center">58.9</td>
+<td align="center">66 (59)</td>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code># HPV presence
-x &lt;- DF$hpv
-labx &lt;- &quot;HPV Status&quot;
-gbar(x, sort = FALSE) +
-  xlab(labx) +
-  ggtitle(paste(&quot;Distribution by&quot;, labx))</code></pre>
-<p><img src="index_files/figure-html/Descriptive_Pathology-3.png" width="864" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>nice_table_factor(x)</code></pre>
+<pre class="r"><code>g_barplot(x)</code></pre>
+<p><img src="index_files/figure-html/grade-1.png" width="864" style="display: block; margin: auto;" /></p>
+<hr />
+<p> </p>
+</div>
+<div id="hpv-status" class="section level2">
+<h2>HPV status</h2>
+<pre class="r"><code>x &lt;- DF$hpv_status
+tbl_nice(x)</code></pre>
 <table>
+<caption>Summary table</caption>
 <thead>
 <tr class="header">
 <th></th>
-<th align="center">No. Cases</th>
-<th align="center">%</th>
+<th align="center">No. Cases (%)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>HPV negative</td>
-<td align="center">20</td>
-<td align="center">38</td>
+<td align="center">78 (70)</td>
 </tr>
 <tr class="even">
 <td>HPV positive</td>
-<td align="center">32</td>
-<td align="center">62</td>
+<td align="center">33 (30)</td>
 </tr>
 </tbody>
 </table>
+<pre class="r"><code>g_barplot(x)</code></pre>
+<p><img src="index_files/figure-html/hpv_status-1.png" width="864" style="display: block; margin: auto;" /></p>
+<hr />
+<p> </p>
 </div>
-<div id="igf1r-expression" class="section level4">
-<h4>IGF1R Expression</h4>
-<p>We summarize IGF1R expression by H-scores using histograms and by levels using bar plots. As mentioned before, H-scores correspond to median values from all TMA spots belonging to each particular case. Also, IGF1R levels correspond to the highest level observed at any spot for each particular case.</p>
-<pre class="r"><code># IGF1R H-scores
-labx &lt;- &quot;Median H-Scores&quot;
-x &lt;- DF$hscore
-ghist(x, BW = 25) +
-  xlab(labx) +
-  ggtitle(paste(&quot;Distribution of&quot;, labx))</code></pre>
-<p><img src="index_files/figure-html/Descriptive_Expression-1.png" width="864" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>nice_table_numeric(x)</code></pre>
+<div id="igf1r-h-scores" class="section level2">
+<h2>IGF1R H-scores</h2>
+<pre class="r"><code>x &lt;- DF$hscore
+tbl_nice(x)</code></pre>
 <table>
+<caption>Summary table</caption>
 <thead>
 <tr class="header">
-<th align="left">Statistics</th>
+<th></th>
 <th align="center">Values</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Mean</td>
+<td>Mean</td>
 <td align="center">38</td>
 </tr>
 <tr class="even">
-<td align="left">Standard Deviation</td>
+<td>Standard deviation</td>
 <td align="center">48.3</td>
 </tr>
 <tr class="odd">
-<td align="left">Median</td>
+<td>Median</td>
 <td align="center">22.5</td>
 </tr>
 <tr class="even">
-<td align="left">Interquartile Range</td>
+<td>Interquartile range</td>
 <td align="center">51.4</td>
 </tr>
 <tr class="odd">
-<td align="left">Mininum</td>
+<td>Mininum</td>
 <td align="center">0</td>
 </tr>
 <tr class="even">
-<td align="left">Maximum</td>
+<td>Maximum</td>
 <td align="center">212</td>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code># IGF1R levels
-x &lt;- DF$memb
-labx &lt;- &quot;IGF1R Levels&quot;
-gbar(x, sort = FALSE) +
-  xlab(labx) +
-  ggtitle(paste(&quot;Distribution by&quot;, labx))</code></pre>
-<p><img src="index_files/figure-html/Descriptive_Expression-2.png" width="864" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>nice_table_factor(x)</code></pre>
+<pre class="r"><code>g_histogram(x, bin = 20, max_break = 220)</code></pre>
+<p><img src="index_files/figure-html/hscore-1.png" width="864" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>g_density(x)</code></pre>
+<p><img src="index_files/figure-html/hscore-2.png" width="864" style="display: block; margin: auto;" /></p>
+<hr />
+<p> </p>
+</div>
+<div id="igf1r-levels" class="section level2">
+<h2>IGF1R levels</h2>
+<pre class="r"><code>x &lt;- DF$memb
+tbl_nice(x)</code></pre>
 <table>
+<caption>Summary table</caption>
 <thead>
 <tr class="header">
 <th></th>
-<th align="center">No. Cases</th>
-<th align="center">%</th>
+<th align="center">No. Cases (%)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>0</td>
-<td align="center">37</td>
-<td align="center">33.0</td>
+<td align="center">37 (33)</td>
 </tr>
 <tr class="even">
 <td>1+</td>
-<td align="center">52</td>
-<td align="center">46.4</td>
+<td align="center">52 (46)</td>
 </tr>
 <tr class="odd">
 <td>2+</td>
-<td align="center">16</td>
-<td align="center">14.3</td>
+<td align="center">16 (14)</td>
 </tr>
 <tr class="even">
 <td>3+</td>
-<td align="center">7</td>
-<td align="center">6.2</td>
+<td align="center">7 (6)</td>
 </tr>
 </tbody>
 </table>
+<pre class="r"><code>g_barplot(x)</code></pre>
+<p><img src="index_files/figure-html/memb-1.png" width="864" style="display: block; margin: auto;" /></p>
+<hr />
+<p> </p>
 </div>
 </div>
-<div id="association-analysis" class="section level3">
-<h3>Association Analysis</h3>
-<p>In this subsection we evaluate the association of H-scores and levels of IGF1R expression by histologic subtypes, histologic grades, and HPV status. Since the distribution of IGF1R H-scores is right-skeewed (see histogram above), we used a base 10 logarithmic scale in addition to the original scale to depict the results more clearly.</p>
-<div id="igf1r-h-scores-and-pathologic-features" class="section level4">
-<h4>IGF1R H-scores and pathologic features</h4>
-<pre class="r"><code># H-scores
-var &lt;- DF$hscore
-lab_var &lt;- &quot;IGF1R Median H-Scores&quot;
-# H-scores by histologic subtype
-pred &lt;- DF$subtype2
-lab_pred &lt;- &quot;Histologic Subtype&quot;
-gbox(var, pred) +
-  xlab(lab_pred) +
-  ylab(lab_var) +
-  ggtitle(paste(&quot;Distribution of&quot;, lab_var, &quot;\nby&quot;, lab_pred))</code></pre>
-<p><img src="index_files/figure-html/Association_Hscores-1.png" width="864" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>nice_table_numeric(var, pred)</code></pre>
+<div id="results-association-analysis" class="section level1">
+<h1><strong>Results: Association Analysis</strong></h1>
+<p>In this subsection we evaluate the association of H-scores and levels of IGF1R expression by histologic subtypes, histologic grades, and HPV status.</p>
+<div id="igf1r-h-scores-and-histologic-subtype" class="section level2">
+<h2>IGF1R H-scores and histologic subtype</h2>
+<pre class="r"><code>x &lt;- DF$hscore
+y &lt;- DF$subtype2
+tbl_nice(x, y)</code></pre>
 <table>
+<caption>Summary table</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -639,7 +658,7 @@ gbox(var, pred) +
 <td align="center">11.5</td>
 </tr>
 <tr class="even">
-<td>Standard Deviation</td>
+<td>Standard deviation</td>
 <td align="center">58.3</td>
 <td align="center">42.2</td>
 <td align="center">36</td>
@@ -657,7 +676,7 @@ gbox(var, pred) +
 <td align="center">4.5</td>
 </tr>
 <tr class="even">
-<td>Interquartile Range</td>
+<td>Interquartile range</td>
 <td align="center">48.2</td>
 <td align="center">58.8</td>
 <td align="center">55</td>
@@ -685,16 +704,41 @@ gbox(var, pred) +
 </tr>
 </tbody>
 </table>
-<pre class="r"><code># H-scores by histologic grade
-pred &lt;- DF$grade
-lab_pred &lt;- &quot;Histologic Grade&quot;
-gbox(var, pred) +
-  xlab(lab_pred) +
-  ylab(lab_var) +
-  ggtitle(paste(&quot;Distribution of&quot;, lab_var, &quot;\nby&quot;, lab_pred))</code></pre>
-<p><img src="index_files/figure-html/Association_Hscores-2.png" width="864" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>nice_table_numeric(var, pred)</code></pre>
+<pre class="r"><code>tbl_test(x, y)</code></pre>
 <table>
+<caption>Kruskal-Wallis rank sum test</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Statistic</td>
+<td align="center">18.26</td>
+</tr>
+<tr class="even">
+<td>Parameter</td>
+<td align="center">5</td>
+</tr>
+<tr class="odd">
+<td>P statistic</td>
+<td align="center">0.0026</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>g2_nice(x, y)</code></pre>
+<p><img src="index_files/figure-html/hscore_subtype2-1.png" width="864" style="display: block; margin: auto;" /><img src="index_files/figure-html/hscore_subtype2-2.png" width="864" style="display: block; margin: auto;" /></p>
+<hr />
+<p> </p>
+</div>
+<div id="igf1r-h-scores-and-histologic-grade" class="section level2">
+<h2>IGF1R H-scores and histologic grade</h2>
+<pre class="r"><code>y &lt;- DF$grade
+tbl_nice(x, y)</code></pre>
+<table>
+<caption>Summary table</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -711,7 +755,7 @@ gbox(var, pred) +
 <td align="center">47.7</td>
 </tr>
 <tr class="even">
-<td>Standard Deviation</td>
+<td>Standard deviation</td>
 <td align="center">6.5</td>
 <td align="center">45.7</td>
 <td align="center">49.2</td>
@@ -723,7 +767,7 @@ gbox(var, pred) +
 <td align="center">32.5</td>
 </tr>
 <tr class="even">
-<td>Interquartile Range</td>
+<td>Interquartile range</td>
 <td align="center">4.5</td>
 <td align="center">30.0</td>
 <td align="center">52.6</td>
@@ -742,468 +786,345 @@ gbox(var, pred) +
 </tr>
 </tbody>
 </table>
-<pre class="r"><code># H-scores by HPV status
-pred &lt;- DF$hpv
-lab_pred &lt;- &quot;HPV Status&quot;
-gbox(var, pred) +
-  xlab(lab_pred) +
-  ylab(lab_var) +
-  ggtitle(paste(&quot;Distribution of&quot;, lab_var, &quot;\nby&quot;, lab_pred))</code></pre>
-<p><img src="index_files/figure-html/Association_Hscores-3.png" width="864" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>nice_table_numeric(var, pred)</code></pre>
+<pre class="r"><code>tbl_test(x, y)</code></pre>
 <table>
+<caption>Kruskal-Wallis rank sum test</caption>
 <thead>
 <tr class="header">
 <th></th>
-<th align="center">HPV negative</th>
-<th align="center">HPV positive</th>
+<th align="center">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Mean</td>
-<td align="center">46.2</td>
-<td align="center">40.3</td>
+<td>Statistic</td>
+<td align="center">15.13</td>
 </tr>
 <tr class="even">
-<td>Standard Deviation</td>
-<td align="center">51.2</td>
-<td align="center">60.8</td>
+<td>Parameter</td>
+<td align="center">2</td>
 </tr>
 <tr class="odd">
-<td>Median</td>
-<td align="center">29.2</td>
-<td align="center">12.5</td>
-</tr>
-<tr class="even">
-<td>Interquartile Range</td>
-<td align="center">60.6</td>
-<td align="center">50.2</td>
-</tr>
-<tr class="odd">
-<td>Minimum</td>
-<td align="center">0.0</td>
-<td align="center">0.0</td>
-</tr>
-<tr class="even">
-<td>Maximum</td>
-<td align="center">202.5</td>
-<td align="center">212.0</td>
+<td>P statistic</td>
+<td align="center">0.00052</td>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code># H-scores in logarithmic scale
-var &lt;- log10(DF$hscore + 1)
-lab_var &lt;- &quot;IGF1R Median H-Scores, log10&quot;
-# H-scores by histologic subtype
-pred &lt;- DF$subtype2
-lab_pred &lt;- &quot;Histologic Subtype&quot;
-gbox(var, pred) +
-  xlab(lab_pred) +
-  ylab(lab_var) +
-  ggtitle(paste(&quot;Distribution of&quot;, lab_var, &quot;\nby&quot;, lab_pred))</code></pre>
-<p><img src="index_files/figure-html/Association_Hscores-4.png" width="864" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>nice_table_numeric(var, pred)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="center">Usual</th>
-<th align="center">Warty-Basaloid</th>
-<th align="center">Warty</th>
-<th align="center">Basaloid</th>
-<th align="center">Papillary</th>
-<th align="center">Other Subtypes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Mean</td>
-<td align="center">1.2</td>
-<td align="center">1.4</td>
-<td align="center">1.0</td>
-<td align="center">1.4</td>
-<td align="center">0.1</td>
-<td align="center">0.7</td>
-</tr>
-<tr class="even">
-<td>Standard Deviation</td>
-<td align="center">0.8</td>
-<td align="center">0.7</td>
-<td align="center">0.8</td>
-<td align="center">0.7</td>
-<td align="center">0.2</td>
-<td align="center">0.7</td>
-</tr>
-<tr class="odd">
-<td>Median</td>
-<td align="center">1.3</td>
-<td align="center">1.6</td>
-<td align="center">1.0</td>
-<td align="center">1.6</td>
-<td align="center">0.0</td>
-<td align="center">0.7</td>
-</tr>
-<tr class="even">
-<td>Interquartile Range</td>
-<td align="center">1.0</td>
-<td align="center">0.8</td>
-<td align="center">1.7</td>
-<td align="center">0.3</td>
-<td align="center">0.0</td>
-<td align="center">0.7</td>
-</tr>
-<tr class="odd">
-<td>Minimum</td>
-<td align="center">0.0</td>
-<td align="center">0.0</td>
-<td align="center">0.0</td>
-<td align="center">0.0</td>
-<td align="center">0.0</td>
-<td align="center">0.0</td>
-</tr>
-<tr class="even">
-<td>Maximum</td>
-<td align="center">2.3</td>
-<td align="center">2.2</td>
-<td align="center">2.0</td>
-<td align="center">2.1</td>
-<td align="center">0.6</td>
-<td align="center">1.5</td>
-</tr>
-</tbody>
-</table>
-<pre class="r"><code># H-scores by histologic grade
-pred &lt;- DF$grade
-lab_pred &lt;- &quot;Histologic Grade&quot;
-gbox(var, pred) +
-  xlab(lab_pred) +
-  ylab(lab_var) +
-  ggtitle(paste(&quot;Distribution of&quot;, lab_var, &quot;\nby&quot;, lab_pred))</code></pre>
-<p><img src="index_files/figure-html/Association_Hscores-5.png" width="864" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>nice_table_numeric(var, pred)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="center">Grade 1</th>
-<th align="center">Grade 2</th>
-<th align="center">Grade 3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Mean</td>
-<td align="center">0.4</td>
-<td align="center">0.8</td>
-<td align="center">1.4</td>
-</tr>
-<tr class="even">
-<td>Standard Deviation</td>
-<td align="center">0.6</td>
-<td align="center">0.8</td>
-<td align="center">0.7</td>
-</tr>
-<tr class="odd">
-<td>Median</td>
-<td align="center">0.0</td>
-<td align="center">0.8</td>
-<td align="center">1.5</td>
-</tr>
-<tr class="even">
-<td>Interquartile Range</td>
-<td align="center">0.7</td>
-<td align="center">1.5</td>
-<td align="center">0.7</td>
-</tr>
-<tr class="odd">
-<td>Minimum</td>
-<td align="center">0.0</td>
-<td align="center">0.0</td>
-<td align="center">0.0</td>
-</tr>
-<tr class="even">
-<td>Maximum</td>
-<td align="center">1.2</td>
-<td align="center">2.3</td>
-<td align="center">2.3</td>
-</tr>
-</tbody>
-</table>
-<pre class="r"><code># H-scores by HPV status
-pred &lt;- DF$hpv
-lab_pred &lt;- &quot;HPV Status&quot;
-gbox(var, pred) +
-  xlab(lab_pred) +
-  ylab(lab_var) +
-  ggtitle(paste(&quot;Distribution of&quot;, lab_var, &quot;\nby&quot;, lab_pred))</code></pre>
-<p><img src="index_files/figure-html/Association_Hscores-6.png" width="864" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>nice_table_numeric(var, pred)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="center">HPV negative</th>
-<th align="center">HPV positive</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Mean</td>
-<td align="center">1.3</td>
-<td align="center">1.0</td>
-</tr>
-<tr class="even">
-<td>Standard Deviation</td>
-<td align="center">0.7</td>
-<td align="center">0.8</td>
-</tr>
-<tr class="odd">
-<td>Median</td>
-<td align="center">1.5</td>
-<td align="center">1.1</td>
-</tr>
-<tr class="even">
-<td>Interquartile Range</td>
-<td align="center">1.0</td>
-<td align="center">1.7</td>
-</tr>
-<tr class="odd">
-<td>Minimum</td>
-<td align="center">0.0</td>
-<td align="center">0.0</td>
-</tr>
-<tr class="even">
-<td>Maximum</td>
-<td align="center">2.3</td>
-<td align="center">2.3</td>
-</tr>
-</tbody>
-</table>
+<pre class="r"><code>g2_nice(x, y)</code></pre>
+<p><img src="index_files/figure-html/hscore_grade-1.png" width="864" style="display: block; margin: auto;" /><img src="index_files/figure-html/hscore_grade-2.png" width="864" style="display: block; margin: auto;" /></p>
+<hr />
+<p> </p>
 </div>
-<div id="igf1r-levels-and-pathologic-features" class="section level4">
-<h4>IGF1R levels and pathologic features</h4>
-<pre class="r"><code># Levels
-var &lt;- DF$memb
-lab_var &lt;- &quot;IGF1R Expression Levels&quot;
-lab_count &lt;- &quot;No. Patients&quot;
-# Levels by histologic subtype
-pred &lt;- DF$subtype2
-lab_pred &lt;- &quot;Histologic Subtype&quot;
-gbars(var, pred, legend_position = c(0.925, 0.825), ws = 2e7) +
-  xlab(lab_pred) +
-  ylab(lab_count) +
-  ggtitle(paste(&quot;Distribution of&quot;, lab_var, &quot;\nby&quot;, lab_pred))</code></pre>
-<p><img src="index_files/figure-html/Association_Levels-1.png" width="864" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>nice_table_factor(var, pred)</code></pre>
+<div id="igf1r-h-scores-and-hpv-status" class="section level2">
+<h2>IGF1R H-scores and HPV status</h2>
+<pre class="r"><code>y &lt;- DF$hpv_status
+tbl_nice(x, y)</code></pre>
 <table>
+<caption>Summary table</caption>
 <thead>
 <tr class="header">
 <th></th>
-<th align="center">Usual</th>
-<th align="center">%</th>
-<th align="center">Warty-Basaloid</th>
-<th align="center">%</th>
-<th align="center">Warty</th>
-<th align="center">%</th>
-<th align="center">Basaloid</th>
-<th align="center">%</th>
-<th align="center">Papillary</th>
-<th align="center">%</th>
-<th align="center">Other Subtypes</th>
-<th align="center">%</th>
+<th align="center">HPV negative</th>
+<th align="center">HPV positive</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td align="center">13</td>
-<td align="center">27.1</td>
-<td align="center">5</td>
-<td align="center">20.8</td>
-<td align="center">6</td>
-<td align="center">35.3</td>
-<td align="center">2</td>
-<td align="center">18.2</td>
-<td align="center">9</td>
-<td align="center">100</td>
-<td align="center">2</td>
-<td align="center">66.7</td>
+<td>Mean</td>
+<td align="center">35.4</td>
+<td align="center">45.4</td>
 </tr>
 <tr class="even">
-<td>1+</td>
-<td align="center">24</td>
-<td align="center">50.0</td>
-<td align="center">11</td>
-<td align="center">45.8</td>
-<td align="center">9</td>
-<td align="center">52.9</td>
-<td align="center">7</td>
-<td align="center">63.6</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">33.3</td>
-</tr>
-<tr class="odd">
-<td>2+</td>
-<td align="center">6</td>
-<td align="center">12.5</td>
-<td align="center">7</td>
-<td align="center">29.2</td>
-<td align="center">2</td>
-<td align="center">11.8</td>
-<td align="center">1</td>
-<td align="center">9.1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0.0</td>
-</tr>
-<tr class="even">
-<td>3+</td>
-<td align="center">5</td>
-<td align="center">10.4</td>
-<td align="center">1</td>
-<td align="center">4.2</td>
-<td align="center">0</td>
-<td align="center">0.0</td>
-<td align="center">1</td>
-<td align="center">9.1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0.0</td>
-</tr>
-</tbody>
-</table>
-<pre class="r"><code># Levels by histologic grade
-pred &lt;- DF$grade
-lab_pred &lt;- &quot;Histologic Grade&quot;
-gbars(var, pred, legend_position = c(0.925, 0.825)) +
-  xlab(lab_pred) +
-  ylab(lab_count) +
-  ggtitle(paste(&quot;Distribution of&quot;, lab_var, &quot;\nby&quot;, lab_pred))</code></pre>
-<p><img src="index_files/figure-html/Association_Levels-2.png" width="864" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>nice_table_factor(var, pred)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="center">Grade 1</th>
-<th align="center">%</th>
-<th align="center">Grade 2</th>
-<th align="center">%</th>
-<th align="center">Grade 3</th>
-<th align="center">%</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td align="center">4</td>
-<td align="center">80</td>
-<td align="center">20</td>
+<td>Standard deviation</td>
 <td align="center">48.8</td>
-<td align="center">13</td>
-<td align="center">19.7</td>
-</tr>
-<tr class="even">
-<td>1+</td>
-<td align="center">1</td>
-<td align="center">20</td>
-<td align="center">15</td>
-<td align="center">36.6</td>
-<td align="center">36</td>
-<td align="center">54.5</td>
+<td align="center">47.2</td>
 </tr>
 <tr class="odd">
-<td>2+</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">5</td>
-<td align="center">12.2</td>
-<td align="center">11</td>
-<td align="center">16.7</td>
+<td>Median</td>
+<td align="center">20.0</td>
+<td align="center">40.0</td>
 </tr>
 <tr class="even">
-<td>3+</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">2.4</td>
-<td align="center">6</td>
-<td align="center">9.1</td>
+<td>Interquartile range</td>
+<td align="center">50.0</td>
+<td align="center">65.0</td>
+</tr>
+<tr class="odd">
+<td>Minimum</td>
+<td align="center">0.0</td>
+<td align="center">0.0</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">212.0</td>
+<td align="center">202.5</td>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code># Levels by HPV status
-pred &lt;- DF$hpv
-lab_pred &lt;- &quot;HPV Status&quot;
-gbars(var, pred, legend_position = c(0.925, 0.825)) +
-  xlab(lab_pred) +
-  ylab(lab_count) +
-  ggtitle(paste(&quot;Distribution of&quot;, lab_var, &quot;\nby&quot;, lab_pred))</code></pre>
-<p><img src="index_files/figure-html/Association_Levels-3.png" width="864" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>nice_table_factor(var, pred)</code></pre>
+<pre class="r"><code>tbl_test(x, y)</code></pre>
 <table>
+<caption>Mann-Whitney U test for the sum of ranks</caption>
 <thead>
 <tr class="header">
 <th></th>
-<th align="center">HPV negative</th>
-<th align="center">%</th>
-<th align="center">HPV positive</th>
-<th align="center">%</th>
+<th align="center">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>U-statistic</td>
+<td align="center">1064</td>
+</tr>
+<tr class="even">
+<td>P statistic</td>
+<td align="center">1.5e-01</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>g2_nice(x, y)</code></pre>
+<p><img src="index_files/figure-html/hscore_hpv_status-1.png" width="864" style="display: block; margin: auto;" /><img src="index_files/figure-html/hscore_hpv_status-2.png" width="864" style="display: block; margin: auto;" /></p>
+<hr />
+<p> </p>
+</div>
+<div id="igf1r-levels-and-histologic-subtype" class="section level2">
+<h2>IGF1R levels and histologic subtype</h2>
+<pre class="r"><code>x &lt;- DF$memb
+y &lt;- DF$subtype2
+tbl_nice(x, y)</code></pre>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Usual (%)</th>
+<th align="center">Warty-Basaloid (%)</th>
+<th align="center">Warty (%)</th>
+<th align="center">Basaloid (%)</th>
+<th align="center">Papillary (%)</th>
+<th align="center">Other Subtypes (%)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>0</td>
-<td align="center">5</td>
-<td align="center">25</td>
-<td align="center">12</td>
-<td align="center">37.5</td>
+<td align="center">13 (27.1)</td>
+<td align="center">5 (20.8)</td>
+<td align="center">6 (35.3)</td>
+<td align="center">2 (18.2)</td>
+<td align="center">9 (100)</td>
+<td align="center">2 (66.7)</td>
 </tr>
 <tr class="even">
 <td>1+</td>
-<td align="center">10</td>
-<td align="center">50</td>
-<td align="center">16</td>
-<td align="center">50.0</td>
+<td align="center">24 (50)</td>
+<td align="center">11 (45.8)</td>
+<td align="center">9 (52.9)</td>
+<td align="center">7 (63.6)</td>
+<td align="center">0 (0)</td>
+<td align="center">1 (33.3)</td>
 </tr>
 <tr class="odd">
 <td>2+</td>
-<td align="center">3</td>
-<td align="center">15</td>
-<td align="center">2</td>
-<td align="center">6.2</td>
+<td align="center">6 (12.5)</td>
+<td align="center">7 (29.2)</td>
+<td align="center">2 (11.8)</td>
+<td align="center">1 (9.1)</td>
+<td align="center">0 (0)</td>
+<td align="center">0 (0)</td>
 </tr>
 <tr class="even">
 <td>3+</td>
-<td align="center">2</td>
-<td align="center">10</td>
-<td align="center">2</td>
-<td align="center">6.2</td>
+<td align="center">5 (10.4)</td>
+<td align="center">1 (4.2)</td>
+<td align="center">0 (0)</td>
+<td align="center">1 (9.1)</td>
+<td align="center">0 (0)</td>
+<td align="center">0 (0)</td>
 </tr>
 </tbody>
 </table>
+<pre class="r"><code>tbl_test(x, y)</code></pre>
+<table>
+<caption>Pearson’s Chi-squared test</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Statistic</td>
+<td align="center">30.16</td>
+</tr>
+<tr class="even">
+<td>Parameter</td>
+<td align="center">15</td>
+</tr>
+<tr class="odd">
+<td>P statistic</td>
+<td align="center">0.011</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>g2_nice(x, y)</code></pre>
+<p><img src="index_files/figure-html/memb_subtype2-1.png" width="864" style="display: block; margin: auto;" /><img src="index_files/figure-html/memb_subtype2-2.png" width="864" style="display: block; margin: auto;" /></p>
+<hr />
+<p> </p>
+</div>
+<div id="igf1r-levels-and-histologic-grade" class="section level2">
+<h2>IGF1R levels and histologic grade</h2>
+<pre class="r"><code>y &lt;- DF$grade
+tbl_nice(x, y)</code></pre>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Grade 1 (%)</th>
+<th align="center">Grade 2 (%)</th>
+<th align="center">Grade 3 (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td align="center">4 (80)</td>
+<td align="center">20 (48.8)</td>
+<td align="center">13 (19.7)</td>
+</tr>
+<tr class="even">
+<td>1+</td>
+<td align="center">1 (20)</td>
+<td align="center">15 (36.6)</td>
+<td align="center">36 (54.5)</td>
+</tr>
+<tr class="odd">
+<td>2+</td>
+<td align="center">0 (0)</td>
+<td align="center">5 (12.2)</td>
+<td align="center">11 (16.7)</td>
+</tr>
+<tr class="even">
+<td>3+</td>
+<td align="center">0 (0)</td>
+<td align="center">1 (2.4)</td>
+<td align="center">6 (9.1)</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>tbl_test(x, y)</code></pre>
+<table>
+<caption>Pearson’s Chi-squared test</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Statistic</td>
+<td align="center">15.73</td>
+</tr>
+<tr class="even">
+<td>Parameter</td>
+<td align="center">6</td>
+</tr>
+<tr class="odd">
+<td>P statistic</td>
+<td align="center">0.015</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>g2_nice(x, y)</code></pre>
+<p><img src="index_files/figure-html/memb_grade-1.png" width="864" style="display: block; margin: auto;" /><img src="index_files/figure-html/memb_grade-2.png" width="864" style="display: block; margin: auto;" /></p>
+<hr />
+<p> </p>
+</div>
+<div id="igf1r-levels-and-hpv-status" class="section level2">
+<h2>IGF1R levels and HPV status</h2>
+<pre class="r"><code>y &lt;- DF$hpv_status
+tbl_nice(x, y)</code></pre>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">HPV negative (%)</th>
+<th align="center">HPV positive (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td align="center">27 (34.6)</td>
+<td align="center">9 (27.3)</td>
+</tr>
+<tr class="even">
+<td>1+</td>
+<td align="center">41 (52.6)</td>
+<td align="center">11 (33.3)</td>
+</tr>
+<tr class="odd">
+<td>2+</td>
+<td align="center">6 (7.7)</td>
+<td align="center">10 (30.3)</td>
+</tr>
+<tr class="even">
+<td>3+</td>
+<td align="center">4 (5.1)</td>
+<td align="center">3 (9.1)</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>tbl_test(x, y)</code></pre>
+<table>
+<caption>Pearson’s Chi-squared test</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Statistic</td>
+<td align="center">11.02</td>
+</tr>
+<tr class="even">
+<td>Parameter</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td>P statistic</td>
+<td align="center">0.012</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>g2_nice(x, y)</code></pre>
+<p><img src="index_files/figure-html/memb_hpv_status-1.png" width="864" style="display: block; margin: auto;" /><img src="index_files/figure-html/memb_hpv_status-2.png" width="864" style="display: block; margin: auto;" /></p>
+<hr />
+<p> </p>
 </div>
 </div>
+<div id="conclusions" class="section level1">
+<h1>Conclusions</h1>
+<p>IGF1R is expressed in about two-thirds of our penile SCC cases, showing association with histologic subtype, histologic grade, and HPV status. Our results suggest that immunohistochemical expression of IGF1R may have prognostic relevance and that IGF1R inhibitors could be useful in treating patients with penile SCC.</p>
+<p> </p>
 </div>
-<div id="conclusions" class="section level2">
-<h2>Conclusions</h2>
-<p>IGF1R is expressed in about two-thirds of our penile SCC cases, showing a strong positive association with histologic grade. Our results suggest that immunohistochemical expression of IGF1R may have prognostic relevance and that IGF1R inhibitors could be useful in treating patients with penile SCC.</p>
-<div id="acknowledgments" class="section level3">
-<h3>Acknowledgments</h3>
+<div id="acknowledgments" class="section level1">
+<h1>Acknowledgments</h1>
 <p>We acknowledge the outstanding work of Helen Fedor and Marcella Southerland, from the TMA Lab Core at the Johns Hopkins University, in building the TMAs for the study.</p>
+<p> </p>
 </div>
-<div id="supportfinancial-disclosure" class="section level3">
-<h3>Support/Financial Disclosure</h3>
+<div id="supportfinancial-disclosure" class="section level1">
+<h1>Support/Financial Disclosure</h1>
 <p>This study was partially supported by the Johns Hopkins Medicine – Patana Fund for Research. Dr. Alcides Chaux was partially supported by an award granted by the National Council of Science and Technology (CONACYT) dependent of the Presidency of the Republic of Paraguay, as an Active Researcher of Level 2 of the National Incentive Program for Researchers (PRONII).</p>
+<p> </p>
 </div>
-</div>
-<div id="references" class="section level2 unnumbered">
-<h2>References</h2>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
 <div id="refs" class="references">
 <div id="ref-fedor_practical_2005">
 <p>[1] Fedor HL, De Marzo AM. Practical methods for tissue microarray construction. Methods Mol Med 2005;103:89–101.</p>
@@ -1212,13 +1133,13 @@ gbars(var, pred, legend_position = c(0.925, 0.825)) +
 <p>[2] Chaux A, Cubilla AL. Advances in the pathology of penile carcinomas. Hum Pathol 2012;43:771–89.</p>
 </div>
 <div id="ref-chaux_histologic_2009">
-<p>[3] Chaux A, Torres J, Pfannl R, et al. Histologic grade in penile squamous cell carcinoma: visual estimation versus digital measurement of proportions of grades, adverse prognosis with any proportion of grade 3 and correlation of a Gleason-like system with nodal metastasis. Am J Surg Pathol 2009;33:1042–8.</p>
+<p>[3] Chaux A, Torres J, Pfannl R, et al. Histologic grade in penile squamous cell carcinoma: Visual estimation versus digital measurement of proportions of grades, adverse prognosis with any proportion of grade 3 and correlation of a gleason-like system with nodal metastasis. Am J Surg Pathol 2009;33:1042–8.</p>
 </div>
 <div id="ref-cubilla_basaloid_2010">
-<p>[4] Cubilla AL, Lloveras B, Alejo M, et al. The basaloid cell is the best tissue marker for human papillomavirus in invasive penile squamous cell carcinoma: a study of 202 cases from Paraguay. Am J Surg Pathol 2010;34:104–14.</p>
+<p>[4] Cubilla AL, Lloveras B, Alejo M, et al. The basaloid cell is the best tissue marker for human papillomavirus in invasive penile squamous cell carcinoma: A study of 202 cases from paraguay. Am J Surg Pathol 2010;34:104–14.</p>
 </div>
 <div id="ref-r_core_team_r:_2014">
-<p>[5] R Core Team. R: A Language and Environment for Statistical Computing. Vienna, Austria: R Foundation for Statistical Computing; 2014.</p>
+<p>[5] R Core Team. R: A language and environment for statistical computing. Vienna, Austria: R Foundation for Statistical Computing; 2014.</p>
 </div>
 </div>
 </div>
@@ -1233,9 +1154,13 @@ gbars(var, pred, legend_position = c(0.925, 0.825)) +
 <script>
 
 // add bootstrap table styles to pandoc tables
-$(document).ready(function () {
+function bootstrapStylePandocTables() {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
 });
+
 
 </script>
 
